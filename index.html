@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Carte des lieux</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<style>
+.container{
+display:flex;
+}
+
+#map {
+height: 600px;
+flex:3;
+}
+
+.controls{
+margin:10px;
+}
+
+#info{
+flex:1;
+padding:15px;
+border-left:1px solid #ccc;
+background:#f7f7f7;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="controls">
+<input id="address" placeholder="Entrez votre adresse">
+
+<select id="mode">
+<option value="driving">Voiture</option>
+<option value="foot">À pied</option>
+</select>
+
+<button onclick="calculateRoute()">Calculer itinéraire</button>
+</div>
+
+<div class="container">
+
+<div id="map"></div>
+
+<div id="info">
+<h2 id="nomLieu">Sélectionnez un lieu</h2>
+
+<p><strong>Adresse :</strong><br><span id="adresseLieu"></span></p>
+
+<p><strong>Horaires :</strong><br><span id="horaireLieu"></span></p>
+
+<p><strong>Informations :</strong><br><span id="infoLieu"></span></p>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
